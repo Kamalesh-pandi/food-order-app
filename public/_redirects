@@ -1,0 +1,5 @@
+# Rewrite /api calls to the serverless function
+/api/*  /.netlify/functions/api-proxy  200
+
+# SPA Fallback for all other routes
+/*  /index.html  200
