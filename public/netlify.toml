@@ -1,0 +1,17 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# API Proxy with Origin Spoofing
+[[redirects]]
+  from = "/api/*"
+  to = "http://16.171.10.128:8081/api/:splat"
+  status = 200
+  force = true
+  headers = {Origin = "http://16.171.10.128:8081", Referer = "http://16.171.10.128:8081/", Host = "16.171.10.128:8081"}
+
+# SPA Fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

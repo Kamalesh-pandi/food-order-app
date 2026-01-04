@@ -1,0 +1,231 @@
+:root {
+  --primary-color: #ff6b00;
+  /* Vibrant Orange */
+  --secondary-color: #e65100;
+  /* Darker Orange */
+  --sidebar-width: 250px;
+  --right-panel-width: 350px;
+
+  /* Light Theme Defaults */
+  --text-dark: #2c2c2c;
+  --text-secondary: #6c757d;
+  --text-gray: #888888;
+  --bg-light: #f4f5f7;
+  --bg-white: #ffffff;
+  --bg-sidebar: #ffffff;
+  --border-color: #dee2e6;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 5px 15px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  font-family: 'Poppins', 'Outfit', sans-serif;
+}
+
+/* Dark Theme Overrides */
+[data-bs-theme="dark"] {
+  --text-dark: #e9ecef;
+  --text-secondary: #adb5bd;
+  --text-gray: #aaa;
+  --bg-light: #212529;
+  /* Dark surface */
+  --bg-white: #1a1d21;
+  /* Darker background similar to Github Dimmed */
+  --bg-sidebar: #1a1d21;
+  --border-color: #2d3238;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Bootstrap Overrides & Utilities */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.border-primary {
+  border-color: var(--primary-color) !important;
+}
+
+.bg-app-surface {
+  background-color: var(--bg-white) !important;
+  transition: background-color 0.3s ease;
+}
+
+.bg-app-light {
+  background-color: var(--bg-light) !important;
+  transition: background-color 0.3s ease;
+}
+
+.text-app-primary {
+  color: var(--text-dark) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.btn-primary-custom {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 94, 0, 0.3);
+  color: white;
+}
+
+.text-orange {
+  color: var(--primary-color) !important;
+}
+
+/* Card Hover Effect */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale-up:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.shadow-hover:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(-15deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(-15deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-15deg);
+  }
+}
+
+.floating-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.fw-black {
+  font-weight: 800;
+}
+
+.auth-input {
+  background-color: var(--bg-light) !important;
+  color: var(--text-dark) !important;
+  border: 1px solid transparent !important;
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  background-color: var(--bg-white) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25) !important;
+  color: var(--text-dark) !important;
+}
+
+[data-bs-theme="dark"] .auth-input {
+  background-color: var(--bg-sidebar) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-dark) !important;
+}
+
+[data-bs-theme="dark"] .auth-input:focus {
+  background-color: var(--bg-sidebar) !important;
+  border-color: var(--primary-color) !important;
+}
+
+[data-bs-theme="dark"] .auth-input::placeholder {
+  color: var(--text-secondary) !important;
+}
